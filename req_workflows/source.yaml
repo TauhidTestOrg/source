@@ -17,5 +17,5 @@ jobs:
      - name: Always fail
         run: exit 1
      - name: Always skip
-       if: 
+       if: false
        run : echo ""Hello"""
