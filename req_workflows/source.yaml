@@ -1,4 +1,4 @@
-"name: ""Trigger Integration tests""
+name: "Trigger Integration tests"
 on:
   pull_request_target:
       
@@ -14,8 +14,19 @@ jobs:
 
       - name: Always pass
         run: exit 0
-     - name: Always fail
+      - name: Always skip
+        if: false
+        run : echo "Hello"
+      - name: Always run after skip
+        if: true
+        run : echo "Hello"
+      - name: Always fail
+        continue-on-error: true
         run: exit 1
-     - name: Always skip
-       if: false
-       run : echo ""Hello"""
+      - name: Always skip
+        if: false
+        run : echo "Hello"
+      - name: Always run after skip
+        if: true
+        run : echo "Hello"
+
