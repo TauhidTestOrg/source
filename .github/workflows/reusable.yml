@@ -3,10 +3,82 @@ on:
   workflow_call:
 
 jobs:
-  reusable-job:
+  trigger-reusable-tests0:
+    name: Trigger Integration tests0
     runs-on: ubuntu-latest
-    environment: dev
     steps:
-    - name: Use variables
-      run: |
-        echo "Hello from reusable workflow"
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+            path: IntegrationTests
+
+      - name: Always pass
+        run: exit 0
+      - name: Always skip
+        if: false
+        run : echo "Hello"
+      - name: Always run after skip
+        if: true
+        run : echo "Hello"
+      - name: Always fail
+        continue-on-error: true
+        run: exit 1
+      - name: Always skip
+        if: false
+        run : echo "Hello"
+      - name: Always run after skip
+        if: true
+        run : echo "Hello"
+  trigger-reusable-tests2:
+    name: Trigger Integration tests2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+            path: IntegrationTests
+
+      - name: Always pass
+        run: exit 0
+      - name: Always skip
+        if: false
+        run : echo "Hello"
+      - name: Always run after skip
+        if: true
+        run : echo "Hello"
+      - name: Always fail
+#         continue-on-error: true
+        run: exit 1
+      - name: Always skip
+        if: false
+        run : echo "Hello"
+      - name: Always run after skip
+        if: true
+        run : echo "Hello"
+  trigger-reusable-tests3:
+    if: false
+    name: Trigger Integration tests3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+            path: IntegrationTests
+
+      - name: Always pass
+        run: exit 0
+      - name: Always skip
+        if: false
+        run : echo "Hello"
+      - name: Always run after skip
+        if: true
+        run : echo "Hello"
+      - name: Always fail
+#         continue-on-error: true
+        run: exit 1
+      - name: Always skip
+        if: false
+        run : echo "Hello"
+      - name: Always run after skip
+        if: true
+        run : echo "Hello"
