@@ -1,18 +1,18 @@
 name: Test required workflow
 on: pull_request
 jobs:
-#   job-always-pass:
-#     name: Succesful job
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Always pass
-#         run: exit 0
-  job-always-fail:
-    name: Failing job
+  job-always-pass:
+    name: Succesful job
     runs-on: ubuntu-latest
     steps:
       - name: Always pass
-        run: exit 1
+        run: exit 0
+#   job-always-fail:
+#     name: Failing job
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Always pass
+#         run: exit 1
   job-to-be-skipped:
     if: false
     name: Skipped job
