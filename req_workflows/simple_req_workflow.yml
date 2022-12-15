@@ -1,8 +1,7 @@
 name: Test required workflow
-on:
-  pull_request
+on: [pull_request]
       
-jobs: 
+jobs:
   job-always-pass:
     name: Succesful job
     runs-on: ubuntu-latest
