@@ -15,10 +15,10 @@ jobs:
 #     steps:
 #       - name: Always pass
 #         run: exit 1
-#    job-to-be-skipped:
-#      if: false
-#      name: Skipped job
-#      runs-on: ubuntu-latest
-#      steps:
-#        - name: Check out repository
-#          run: echo "Hello world"
+   job-to-be-skipped:
+     if: false
+     name: Skipped job
+     runs-on: ubuntu-latest
+     steps:
+       - name: Check out repository
+         run: echo "Hello world"
